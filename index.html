@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a658a7b479.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/logo.png" />
+    <title>Algorithm Visualization</title>
+</head>
+
+<body>
+    <nav>
+        <div class='logo'><a href='index.html'>Algo<span>Visualization </span></a></div>
+
+        <label for='btn' class='icon'>
+            <span class='fa fa-bars'></span>
+        </label>
+        <input type='checkbox' id='btn' style="display: none;">
+        <ul>
+            <li><a href='https://eda-data-explorer.herokuapp.com/'>EDA</a></li>
+            <li><a href='./templates/pathfinding.html'>Pathfinding</a></li>
+            <li><a href='./templates/searching.html'>Searching</a></li>
+            <li><a href='#'>Sorting</a></li>
+            <li><a href='#'>Encryption</a></li>
+            <li><a href='https://github.com/Elysian01/Algorithm-Visualization'>Repo</a></li>
+
+        </ul>
+    </nav>
+    <br>
+    <h1 class="container"><i class="fas fa-graduation-cap"></i> Explore Awesome Algorithms !</h1>
+
+    <br>
+    <div class="card-deck">
+
+        <script>
+            let cards = [{
+                title: "Sorting Algorithms",
+                link: "#",
+                image: "./img/sort2.gif",
+                alt: "Sorting image"
+            }, {
+                title: "Pathfinding Algorithms",
+                link: "./templates/pathfinding.html",
+                image: "./img/pathfinding.gif",
+                alt: "Pathfinding image"
+            }, {
+                title: "Searching Algorithms",
+                link: "./templates/searching.html",
+                image: "./img/avl.gif",
+                alt: "Searching image"
+            }]
+
+            for (i = 0; i < cards.length; i++) {
+                card = cards[i]
+                card_template = `
+                     <div class="card">
+                        <a href=${card.link}><img class="card-image" src=${card.image} alt=${card.alt}></a>
+                        <div class="container">
+                            <div class="card-title">
+                                <h2>${card.title}</h2>
+                            </div>
+                            <div class="card-buttons">
+                                <button class="btn-danger"><a href=${card.link}>Visualize</a></button>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                `
+                document.querySelector(".card-deck").innerHTML += card_template;
+            };
+        </script>
+
+    </div>
+    <br>
+    <br>
+</body>
+
+</html>

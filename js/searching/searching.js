@@ -65,14 +65,7 @@ function sizeChange() {
     document.getElementById("searchKey").value = searchKeyValue
 }
 
-function speedChange() {
-    speed = document.getElementById("speed").value
-    searchKeyValue = document.getElementById("searchKey").value;
-    delay = 1500;
-    delay = parseInt(delay / speed);
-    init(size, delay)
-    document.getElementById("searchKey").value = searchKeyValue
-}
+
 
 function headerDisplay(algoName) {
     if (algoName == "linear") {

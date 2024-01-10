@@ -16,11 +16,11 @@
             <div class="mobile-logo">
                 <br />
                 <h1>
-                    <a href="../index.html">Algo<span>Visualization</span></a>
+                    <a href="../index.html">Algo<span>Rismus</span></a>
                 </h1>
             </div>
             <div class="logo">
-                <a href="../index.html">Algo<span>Visualization</span></a>
+                <a href="../index.html">Algo<span>Rismus</span></a>
             </div>
 
             <ul>
@@ -47,6 +47,9 @@
                                 A* ALGORITHM
                             </option>
                         </select>
+
+                        
+                        
                     </a>
                 </li>
                 <li>
@@ -112,9 +115,9 @@
                 <h2 class="notation-text">Weight</h2>
             </div>
             <div class="notation" style="display: inline">
-                <button class="btn-dark btn-hover tutorial-btn" id="tutorial" title="Page Walk through">
+                <!-- <button class="btn-dark btn-hover tutorial-btn" id="tutorial" title="Page Walk through">
                     Tutorial
-                </button>
+                </button> -->
             </div>
         </div>
 
@@ -185,8 +188,44 @@
     <script src="../js/pathfinding/algorithms/astar.js"></script>
     <script src="../js/pathfinding/maze/randomMaze.js"></script>
     <script src="../js/pathfinding/maze/recursiveDivision.js"></script>
-    <script src="../js/pathfinding/tutorialsModal.js"></script>
+    <!-- <script src="../js/pathfinding/tutorialsModal.js"></script> -->
     <script src="../js/pathfinding/init.js"></script>
+    <div id="code-container" style="display: none;">
+        <pre id="code-display"></pre>
+    </div>
+   <script>
+        const codeDisplay = document.getElementById('code-display');
+        const algoSelect = document.getElementById('algo');
+        const codeContainer = document.getElementById('code-container');
+    
+        algoSelect.addEventListener('change', function() {
+            const selectedAlgo = this.value;
+    
+            if (selectedAlgo) {
+                codeContainer.style.display = 'block';
+    
+                switch (selectedAlgo) {
+                    case 'BFS':
+                        codeDisplay.textContent = 'BFS code goes here...';
+                        break;
+                    case 'DFS':
+                        codeDisplay.textContent = 'DFS code goes here...';
+                        break;
+                    case 'Dijkstra':
+                        codeDisplay.textContent = 'Dijkstra code goes here...';
+                        break;
+                    case 'Astar':
+                        codeDisplay.textContent = 'A* code goes here...';
+                        break;
+                }
+            } else {
+                codeContainer.style.display = 'none';
+            }
+        });
+    </script>
+    
+    
+
 </body>
 
 </html>

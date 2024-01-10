@@ -22,6 +22,14 @@ function addCard(elements = 10) {
     }
 }
 
+function speedChange() {
+    speed = document.getElementById("speed").value
+    searchKeyValue = document.getElementById("searchKey").value;
+    delay = 1500;
+    delay = parseInt(delay / speed);
+    init(size, delay)
+    document.getElementById("searchKey").value = searchKeyValue
+}
 async function search() {
     if (algoName === "") {
         alert("Please Select Algorithm First !");
